@@ -1,0 +1,808 @@
+/* -------------------- Reset & Base -------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  background: #fffaf5;
+  color: #333;
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* -------------------- Common Components -------------------- */
+.btn {
+  background: #f4a261;
+  color: #fff;
+  padding: 12px 35px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+.btn:hover {
+  background: #e76f51;
+  transform: scale(1.05);
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.fade-in.show {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* -------------------- Navbar -------------------- */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.75);
+  color: #fff;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 14px 60px;
+  z-index: 1000;
+  transition: background 0.3s ease;
+}
+header .logo {
+  font-family: "Playfair Display", serif;
+  font-size: 1.9rem;
+  letter-spacing: 1px;
+  font-weight: 700;
+}
+header .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 30px;
+}
+header .nav-links li a {
+  color: #fff;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.3s ease;
+}
+header .nav-links li a:hover,
+header .nav-links li a.active {
+  color: #f4a261;
+}
+
+/* -------------------- Hero Section -------------------- */
+.hero {
+  height: 100vh;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: #fff;
+  overflow: hidden;
+}
+.background-video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -2;
+}
+.hero-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: -1;
+}
+.hero-content {
+  max-width: 800px;
+  padding: 0 20px;
+  animation: fadeIn 1.5s ease;
+}
+.hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 4rem;
+  margin-bottom: 15px;
+  letter-spacing: 1px;
+}
+.hero-content .quote {
+  font-size: 1.4rem;
+  color: #f4a261;
+  margin-bottom: 30px;
+  opacity: 0.9;
+}
+
+/* -------------------- Best Restaurant -------------------- */
+.best-restaurant {
+  padding: 110px 8%;
+  background: #fffaf5;
+}
+.best-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  gap: 50px;
+}
+.best-image img {
+  width: 480px;
+  max-width: 100%;
+  border-radius: 10px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+.best-text {
+  max-width: 500px;
+}
+.best-text h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: #9d0208;
+  margin-bottom: 20px;
+}
+.best-text p {
+  font-size: 1.05rem;
+  color: #3a3a3a;
+  line-height: 1.7;
+  margin-bottom: 30px;
+}
+
+/* -------------------- Our Specials -------------------- */
+.menu-preview {
+  background: #fff;
+  padding: 100px 7%;
+  text-align: center;
+  background-attachment: fixed;
+  background-image: url("https://images.unsplash.com/photo-1504674900247-0877df9cc836?auto=format&fit=crop&w=1600&q=80");
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: #fff;
+}
+.menu-preview::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.65);
+  z-index: 0;
+}
+.menu-preview h2 {
+  position: relative;
+  z-index: 1;
+  font-family: "Playfair Display", serif;
+  color: #f4a261;
+  font-size: 2.5rem;
+  margin-bottom: 50px;
+}
+.menu-items {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 35px;
+}
+.card {
+  width: 250px;
+  border-radius: 10px;
+  overflow: hidden;
+  background: #fffaf5;
+  border: 1px solid #f1e3d3;
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.card h3 {
+  padding: 15px;
+  color: #6a040f;
+  font-size: 1.1rem;
+  background: #fff;
+}
+.card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 15px rgba(0, 0, 0, 0.2);
+}
+.card:hover img {
+  transform: scale(1.05);
+}
+
+/* -------------------- Footer -------------------- */
+footer {
+  background: #6a040f;
+  color: #fff;
+  text-align: center;
+  padding: 25px 0;
+  font-size: 0.95rem;
+  letter-spacing: 0.3px;
+}
+
+/* -------------------- Animations -------------------- */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================================== ABOUT PAGE STYLES ========================================================== */
+.story-section {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1541544741938-0af808871cc0?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.story-section::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.story-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.story-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  margin-bottom: 15px;
+  color: #f4a261;
+}
+.story-content p {
+  font-size: 1.3rem;
+  color: #fff;
+}
+.story-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+  animation: fadeIn 1.5s ease;
+}
+.about-content {
+  background: #fffaf5;
+  padding: 100px 50px;
+  text-align: center;
+  color: #333;
+}
+.about-content h2 {
+  font-family: "Playfair Display", serif;
+  color: #9d0208;
+  font-size: 2.3rem;
+  margin-bottom: 20px;
+}
+.about-content p {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  margin-bottom: 25px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+.highlight-quote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  color: #f4a261;
+  margin: 40px auto;
+  font-style: italic;
+}
+.about-gallery {
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+.about-gallery img {
+  width: 400px;
+  border-radius: 10px;
+  transition: transform 0.4s ease;
+}
+.about-gallery img:hover {
+  transform: scale(1.05);
+}
+
+/* Experience Section */
+.experience-section {
+  background: #fff;
+  padding: 100px 40px;
+  text-align: center;
+}
+.experience-section h2 {
+  font-family: "Playfair Display", serif;
+  color: #9d0208;
+  font-size: 2.3rem;
+  margin-bottom: 50px;
+}
+.experience-cards {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+.exp-card {
+  background: #fffaf5;
+  border: 1px solid #f1e3d3;
+  width: 250px;
+  padding: 25px;
+  border-radius: 10px;
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.exp-card h3 {
+  color: #6a040f;
+  margin-bottom: 10px;
+  font-size: 1.3rem;
+}
+.exp-card p {
+  color: #333;
+  font-size: 0.95rem;
+}
+.exp-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ------------------------------ MENU HERO SECTION ------------------------------ */
+.menu-hero {
+  height: 70vh;
+  background: url("https://t3.ftcdn.net/jpg/15/85/20/06/240_F_1585200682_nkcu5S4xCzzZMqhqMKu7E5g9GkduVcje.jpg")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.menu-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  z-index: 0;
+}
+.menu-hero-content {
+  position: relative;
+  z-index: 1;
+  max-width: 700px;
+  text-align: center;
+  animation: fadeIn 1.5s ease;
+}
+.menu-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #f4a261;
+  margin-bottom: 15px;
+}
+.menu-hero-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.9;
+  margin-bottom: 30px;
+}
+
+/* Menu Navigation */
+.menu-navigation {
+  background: #fffaf5;
+  padding: 30px 0;
+  text-align: center;
+}
+.menu-nav-container {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+.menu-nav-btn {
+  background: #f4a261;
+  color: #fff;
+  padding: 12px 25px;
+  border-radius: 6px;
+  font-weight: 500;
+  transition: background 0.3s ease, transform 0.3s ease;
+  display: inline-block;
+}
+.menu-nav-btn:hover {
+  background: #e76f51;
+  transform: scale(1.05);
+}
+
+/* ------------------------------ MENU LIST SECTION ------------------------------ */
+.menu-section {
+  background: #fffaf5;
+  padding: 100px 8%;
+}
+.menu-category {
+  margin-bottom: 80px;
+}
+.menu-category h2 {
+  text-align: center;
+  font-family: "Playfair Display", serif;
+  font-size: 2.4rem;
+  color: #9d0208;
+  margin-bottom: 15px;
+  position: relative;
+}
+.menu-category h2::after {
+  content: "";
+  display: block;
+  width: 90px;
+  height: 3px;
+  background: #f4a261;
+  margin: 12px auto 0;
+  border-radius: 3px;
+}
+.menu-category .subcat {
+  font-size: 1.3rem;
+  color: #6a040f;
+  text-align: center;
+  margin: 40px 0 25px;
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+}
+.menu-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 35px 45px;
+  padding: 0 5%;
+}
+.dish {
+  display: flex;
+  align-items: center;
+  background: #fff;
+  padding: 22px 28px;
+  border-radius: 12px;
+  border: 1px solid #f1e3d3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: box-shadow 0.3s ease;
+}
+.dish:hover {
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.1);
+}
+.dish-img {
+  flex-shrink: 0;
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 4px solid #f4a261;
+  overflow: hidden;
+  margin-right: 25px;
+  transition: transform 0.6s ease;
+}
+.dish-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 1s ease;
+}
+.dish:hover .dish-img img {
+  transform: rotate(8deg) scale(1.08);
+}
+.dish-info {
+  flex-grow: 1;
+}
+.dish-info h3 {
+  font-size: 1.2rem;
+  color: #9d0208;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+.dish-info p {
+  font-size: 0.95rem;
+  color: #333;
+  opacity: 0.9;
+  line-height: 1.5;
+}
+.dish-price {
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #333;
+  margin-left: 10px;
+}
+
+html {
+  scroll-padding-top: 80px;
+}
+
+/* Or if you want to be more specific for menu sections */
+#soups, #starters, #biryanis {
+  scroll-margin-top: 80px;
+}
+
+/* ========================================================== CONTACT PAGE STYLES ========================================================== */
+.contact-hero {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.contact-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.contact-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.contact-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #f4a261;
+  margin-bottom: 15px;
+}
+.contact-hero-content p {
+  font-size: 1.3rem;
+  color: #fff;
+}
+
+/* Contact Info Section */
+.contact-page {
+  background: #fffaf5;
+  padding: 100px 8%;
+  text-align: center;
+}
+.contact-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 50px;
+}
+.contact-info {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 40px;
+}
+.info-box {
+  background: #fff;
+  border: 1px solid #f1e3d3;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+  padding: 25px 30px;
+  border-radius: 10px;
+  width: 280px;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+.info-box:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+}
+.info-box .icon {
+  width: 50px;
+  margin-bottom: 10px;
+}
+.info-box h3 {
+  color: #9d0208;
+  font-size: 1.3rem;
+  margin-bottom: 5px;
+}
+.info-box p {
+  color: #333;
+  font-size: 1rem;
+  line-height: 1.4;
+}
+
+/* Map Section */
+.map-container {
+  width: 100%;
+  max-width: 900px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.map-container img {
+  width: 100%;
+  height: 400px;
+  object-fit: cover;
+  border-radius: 10px;
+  transition: transform 0.5s ease;
+}
+.map-container img:hover {
+  transform: scale(1.03);
+}
+
+/* ========================================================== RESERVATION PAGE STYLES ========================================================== */
+.reservation-hero {
+  height: 70vh;
+  background: url("https://images.unsplash.com/photo-1600891964599-f61ba0e24092?auto=format&fit=crop&w=1600&q=80")
+    center/cover no-repeat;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  color: #fff;
+  position: relative;
+}
+.reservation-hero::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+}
+.reservation-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 700px;
+}
+.reservation-hero-content h1 {
+  font-family: "Playfair Display", serif;
+  font-size: 3rem;
+  color: #f4a261;
+  margin-bottom: 15px;
+}
+.reservation-hero-content p {
+  font-size: 1.2rem;
+  color: #fff;
+  opacity: 0.9;
+}
+
+/* Info Section */
+.reservation-section {
+  background: #fffaf5;
+  padding: 100px 8%;
+}
+.reservation-container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 50px;
+}
+.reservation-info {
+  flex: 1 1 450px;
+}
+.reservation-info h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  color: #9d0208;
+  margin-bottom: 15px;
+}
+.reservation-info .intro {
+  font-size: 1.2rem;
+  color: #6a040f;
+  margin-bottom: 15px;
+  font-weight: 500;
+}
+.reservation-info p {
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 20px;
+}
+.info-block h3 {
+  color: #9d0208;
+  font-size: 1.2rem;
+  margin-bottom: 8px;
+}
+.reservation-image {
+  flex: 1 1 400px;
+  text-align: center;
+}
+.reservation-image img {
+  width: 100%;
+  max-width: 500px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.15);
+  transition: transform 0.5s ease;
+}
+.reservation-image img:hover {
+  transform: scale(1.05);
+}
+
+/* CTA Section */
+.book-now-cta {
+  background: #9d0208;
+  color: #fff;
+  text-align: center;
+  padding: 80px 20px;
+}
+.book-now-cta h2 {
+  font-family: "Playfair Display", serif;
+  font-size: 2.3rem;
+  margin-bottom: 25px;
+}
+
+/* ------------------------------ RESPONSIVE DESIGN ------------------------------ */
+@media (max-width: 900px) {
+  header {
+    padding: 12px 30px;
+  }
+  .hero-content h1 {
+    font-size: 3rem;
+  }
+  .best-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .best-text {
+    max-width: 90%;
+  }
+  .menu-items {
+    flex-direction: column;
+    align-items: center;
+  }
+  .menu-row {
+    grid-template-columns: 1fr;
+    padding: 0;
+  }
+  .dish {
+    flex-direction: column;
+    text-align: center;
+    padding: 25px;
+  }
+  .dish-img {
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  .dish-price {
+    margin-top: 10px;
+  }
+  .menu-hero-content h1 {
+    font-size: 2.3rem;
+  }
+  .menu-hero-content p {
+    font-size: 1rem;
+  }
+  .info-box {
+    width: 100%;
+    max-width: 350px;
+  }
+  .map-container img {
+    height: 300px;
+  }
+  .reservation-container {
+    flex-direction: column;
+    text-align: center;
+  }
+  .reservation-image img {
+    max-width: 90%;
+  }
+  .menu-nav-container {
+    flex-direction: column;
+    align-items: center;
+  }
+}
